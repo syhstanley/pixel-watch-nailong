@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nailong Watch Face</string>
+    <string name="config_layer_name">Nailong Layer</string>
+    <string name="config_layer_behind">Behind Clock</string>
+    <string name="config_layer_front">In Front of Clock</string>
+    <string name="config_home_name">Nailong Home</string>
+    <string name="config_home_top_right">Top-Right</string>
+    <string name="config_home_center">Center</string>
+    <string name="config_home_top_left">Top-Left</string>
+    <string name="config_home_bottom">Bottom-Center</string>
+    <string name="config_size_name">Nailong Size</string>
+    <string name="config_size_small">Small</string>
+    <string name="config_size_medium">Medium</string>
+    <string name="config_size_large">Large</string>
+    <string name="config_size_off">Hidden</string>
+</resources>

@@ -1,0 +1,13 @@
+.gradle/
+watchface/build/
+local.properties
+.idea/
+*.iml
+
+# Temporary / old emulator captures & earlier design drafts
+*.mp4
+screenshot_*.png
+NailongWatchFace_Design.pdf
+NailongWatchFace_Design_v2.pdf
+NailongWatchFace_Design_v3.pdf
+assets/
