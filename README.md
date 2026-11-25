@@ -65,3 +65,7 @@ Design doc: [`NailongWatchFace_Design_v4.pdf`](NailongWatchFace_Design_v4.pdf)
 ./gradlew :watchface:assembleDebug
 # Output: watchface/build/outputs/apk/debug/watchface-debug.apk
 ```
+
+## License / Credits
+
+- Clock & UI font (`watchface/res/font/utility_bold.ttf`): **DM Sans Bold** (SIL Open Font License 1.1, Google Fonts).

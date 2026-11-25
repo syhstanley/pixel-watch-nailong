@@ -149,14 +149,14 @@
                                         <Compare expression="notifOver99Behind">
                                             <PartText x="1" y="7" width="28" height="18">
                                                 <Text align="CENTER" maxLines="1">
-                                                    <Font family="SYNC_TO_DEVICE" size="11" weight="BOLD" color="#FFFFFFFF">99+</Font>
+                                                    <Font family="utility_bold" size="11" weight="BOLD" color="#FFFFFFFF">99+</Font>
                                                 </Text>
                                             </PartText>
                                         </Compare>
                                         <Default>
                                             <PartText x="1" y="4" width="28" height="22">
                                                 <Text align="CENTER" maxLines="1">
-                                                    <Font family="SYNC_TO_DEVICE" size="15" weight="BOLD" color="#FFFFFFFF">
+                                                    <Font family="utility_bold" size="15" weight="BOLD" color="#FFFFFFFF">
                                                         <Template><![CDATA[%d]]><Parameter expression="[UNREAD_NOTIFICATION_COUNT]" /></Template>
                                                     </Font>
                                                 </Text>
@@ -174,15 +174,15 @@
         <!-- ============================================================ -->
         <!-- UTILITY DATE HEADER: Larger bold "WED NOV 25"                -->
         <!-- ============================================================ -->
-        <PartText x="45" y="76" width="360" height="40" name="dateHeader">
+        <PartText x="45" y="48" width="360" height="42" name="dateHeader">
             <Variant mode="AMBIENT" target="alpha" value="145" />
             <Text align="CENTER">
-                <Font family="SYNC_TO_DEVICE" size="26" weight="BOLD" color="#FFE8F553">
+                <Font family="utility_bold" size="29" weight="BOLD" color="#FFE8F553">
                     <Upper>
                         <Template><![CDATA[%s ]]><Parameter expression="[DAY_OF_WEEK_S]" /></Template>
                     </Upper>
                 </Font>
-                <Font family="SYNC_TO_DEVICE" size="26" weight="BOLD" color="#FFFFFFFF">
+                <Font family="utility_bold" size="29" weight="BOLD" color="#FFFFFFFF">
                     <Upper>
                         <Template><![CDATA[%s %d]]><Parameter expression="[MONTH_S]" /><Parameter expression="[DAY]" /></Template>
                     </Upper>
@@ -193,83 +193,82 @@
         <!-- ============================================================ -->
         <!-- UTILITY 24-HOUR DIGITAL CLOCK: Chunky 116px "22:55"          -->
         <!-- ============================================================ -->
-        <DigitalClock x="15" y="106" width="420" height="142">
-            <TimeText format="hh:mm" hourFormat="24" align="CENTER" x="0" y="0" width="420" height="142">
+        <DigitalClock x="15" y="92" width="420" height="154">
+            <TimeText format="hh:mm" hourFormat="24" align="CENTER" x="0" y="0" width="420" height="154">
                 <Variant mode="AMBIENT" target="alpha" value="145" />
-                <Font family="SYNC_TO_DEVICE" size="116" weight="BOLD" color="#FFE8F553" />
+                <Font family="utility_bold" size="124" weight="BOLD" color="#FFE8F553" />
             </TimeText>
         </DigitalClock>
 
         <!-- ============================================================ -->
-        <!-- UTILITY 3 CIRCULAR METRIC WIDGETS (98x98, tight spacing)     -->
-        <!-- ============================================================ -->
-        <Group name="metricsRow" x="0" y="256" width="450" height="108">
+        <!-- UTILITY 3 CIRCULAR METRIC WIDGETS (100x100 at x=43, 175, 307; y=256) -->
+        <Group name="metricsRow" x="0" y="254" width="450" height="108">
             <Variant mode="AMBIENT" target="alpha" value="0" />
 
-            <!-- 1. STEPS CIRCLE (Left: x=62, size=98) -->
-            <Group name="stepsWidget" x="62" y="4" width="98" height="98">
-                <PartDraw x="0" y="0" width="98" height="98">
-                    <Ellipse x="0" y="0" width="98" height="98">
+            <!-- 1. STEPS CIRCLE (Left: x=43..143, center=93) -->
+            <Group name="stepsWidget" x="43" y="2" width="100" height="100">
+                <PartDraw x="0" y="0" width="100" height="100">
+                    <Ellipse x="0" y="0" width="100" height="100">
                         <Fill color="#CC242814" />
                     </Ellipse>
-                    <Arc centerX="49" centerY="49" width="89" height="89" startAngle="-145" endAngle="145" direction="CLOCKWISE">
-                        <Stroke color="#FF3B421D" thickness="7.5" cap="ROUND" />
+                    <Arc centerX="50" centerY="50" width="88" height="88" startAngle="-145" endAngle="145" direction="CLOCKWISE">
+                        <Stroke color="#FF3B421D" thickness="9.5" cap="ROUND" />
                     </Arc>
-                    <Arc centerX="49" centerY="49" width="89" height="89" startAngle="-145" endAngle="-145" direction="CLOCKWISE">
+                    <Arc centerX="50" centerY="50" width="88" height="88" startAngle="-145" endAngle="-145" direction="CLOCKWISE">
                         <Transform target="endAngle" value="-145 + clamp([STEP_PERCENT], 0, 100) * 2.9">
                             <Animation duration="0.4" interpolation="EASE_OUT" />
                         </Transform>
-                        <Stroke color="#FFE8F553" thickness="7.5" cap="ROUND" />
+                        <Stroke color="#FFE8F553" thickness="9.5" cap="ROUND" />
                     </Arc>
                 </PartDraw>
-                <PartText x="8" y="30" width="82" height="34">
+                <PartText x="8" y="31" width="84" height="34">
                     <Text align="CENTER" maxLines="1">
-                        <Font family="SYNC_TO_DEVICE" size="23" weight="BOLD" color="#FFFFFFFF">
+                        <Font family="utility_bold" size="24" weight="BOLD" color="#FFFFFFFF">
                             <Template><![CDATA[%d]]><Parameter expression="[STEP_COUNT]" /></Template>
                         </Font>
                     </Text>
                 </PartText>
-                <PartImage x="38" y="75" width="22" height="22">
+                <PartImage x="39" y="76" width="22" height="22">
                     <Image resource="ic_steps" />
                 </PartImage>
             </Group>
 
-            <!-- 2. BATTERY CIRCLE (Center: x=176, size=98) -->
-            <Group name="batteryWidget" x="176" y="4" width="98" height="98">
-                <PartDraw x="0" y="0" width="98" height="98">
-                    <Ellipse x="0" y="0" width="98" height="98">
+            <!-- 2. BATTERY CIRCLE (Center: x=175..275, center=225) -->
+            <Group name="batteryWidget" x="175" y="2" width="100" height="100">
+                <PartDraw x="0" y="0" width="100" height="100">
+                    <Ellipse x="0" y="0" width="100" height="100">
                         <Fill color="#CC242814" />
                     </Ellipse>
-                    <Arc centerX="49" centerY="49" width="89" height="89" startAngle="-145" endAngle="145" direction="CLOCKWISE">
-                        <Stroke color="#FF3B421D" thickness="7.5" cap="ROUND" />
+                    <Arc centerX="50" centerY="50" width="88" height="88" startAngle="-145" endAngle="145" direction="CLOCKWISE">
+                        <Stroke color="#FF3B421D" thickness="9.5" cap="ROUND" />
                     </Arc>
-                    <Arc centerX="49" centerY="49" width="89" height="89" startAngle="-145" endAngle="-145" direction="CLOCKWISE">
+                    <Arc centerX="50" centerY="50" width="88" height="88" startAngle="-145" endAngle="-145" direction="CLOCKWISE">
                         <Transform target="endAngle" value="-145 + clamp([BATTERY_PERCENT], 0, 100) * 2.9">
                             <Animation duration="0.4" interpolation="EASE_OUT" />
                         </Transform>
-                        <Stroke color="#FFE8F553" thickness="7.5" cap="ROUND" />
+                        <Stroke color="#FFE8F553" thickness="9.5" cap="ROUND" />
                     </Arc>
                 </PartDraw>
-                <PartText x="10" y="30" width="78" height="34">
+                <PartText x="10" y="31" width="80" height="34">
                     <Text align="CENTER" maxLines="1">
-                        <Font family="SYNC_TO_DEVICE" size="25" weight="BOLD" color="#FFFFFFFF">
+                        <Font family="utility_bold" size="26" weight="BOLD" color="#FFFFFFFF">
                             <Template><![CDATA[%d]]><Parameter expression="[BATTERY_PERCENT]" /></Template>
                         </Font>
                     </Text>
                 </PartText>
-                <PartImage x="39" y="75" width="20" height="20">
+                <PartImage x="40" y="76" width="20" height="20">
                     <Image resource="ic_battery" />
                 </PartImage>
             </Group>
 
-            <!-- 3. HEART RATE CIRCLE (Right: x=290, size=98) -->
-            <Group name="heartRateWidget" x="290" y="4" width="98" height="98">
-                <PartDraw x="0" y="0" width="98" height="98">
-                    <Ellipse x="0" y="0" width="98" height="98">
+            <!-- 3. HEART RATE CIRCLE (Right: x=307..407, center=357) -->
+            <Group name="heartRateWidget" x="307" y="2" width="100" height="100">
+                <PartDraw x="0" y="0" width="100" height="100">
+                    <Ellipse x="0" y="0" width="100" height="100">
                         <Fill color="#CC242814" />
                     </Ellipse>
                 </PartDraw>
-                <PartImage x="37" y="18" width="24" height="24">
+                <PartImage x="38" y="20" width="24" height="24">
                     <Image resource="ic_heart" />
                 </PartImage>
                 <Condition>
@@ -277,18 +276,18 @@
                         <Expression name="hasHr"><![CDATA[[HEART_RATE] > 0]]></Expression>
                     </Expressions>
                     <Compare expression="hasHr">
-                        <PartText x="8" y="49" width="82" height="34">
+                        <PartText x="8" y="48" width="84" height="34">
                             <Text align="CENTER" maxLines="1">
-                                <Font family="SYNC_TO_DEVICE" size="25" weight="BOLD" color="#FFFFFFFF">
+                                <Font family="utility_bold" size="26" weight="BOLD" color="#FFFFFFFF">
                                     <Template><![CDATA[%d]]><Parameter expression="round([HEART_RATE])" /></Template>
                                 </Font>
                             </Text>
                         </PartText>
                     </Compare>
                     <Default>
-                        <PartText x="8" y="49" width="82" height="34">
+                        <PartText x="8" y="48" width="84" height="34">
                             <Text align="CENTER" maxLines="1">
-                                <Font family="SYNC_TO_DEVICE" size="25" weight="BOLD" color="#FFFFFFFF">--</Font>
+                                <Font family="utility_bold" size="26" weight="BOLD" color="#FFFFFFFF">--</Font>
                             </Text>
                         </PartText>
                     </Default>
@@ -409,14 +408,14 @@
                                         <Compare expression="notifOver99Front">
                                             <PartText x="1" y="7" width="28" height="18">
                                                 <Text align="CENTER" maxLines="1">
-                                                    <Font family="SYNC_TO_DEVICE" size="11" weight="BOLD" color="#FFFFFFFF">99+</Font>
+                                                    <Font family="utility_bold" size="11" weight="BOLD" color="#FFFFFFFF">99+</Font>
                                                 </Text>
                                             </PartText>
                                         </Compare>
                                         <Default>
                                             <PartText x="1" y="4" width="28" height="22">
                                                 <Text align="CENTER" maxLines="1">
-                                                    <Font family="SYNC_TO_DEVICE" size="15" weight="BOLD" color="#FFFFFFFF">
+                                                    <Font family="utility_bold" size="15" weight="BOLD" color="#FFFFFFFF">
                                                         <Template><![CDATA[%d]]><Parameter expression="[UNREAD_NOTIFICATION_COUNT]" /></Template>
                                                     </Font>
                                                 </Text>
