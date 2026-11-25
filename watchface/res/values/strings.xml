@@ -10,8 +10,10 @@
     <string name="config_home_top_left">Top-Left</string>
     <string name="config_home_bottom">Bottom-Center</string>
     <string name="config_size_name">Nailong Size</string>
-    <string name="config_size_small">Small</string>
-    <string name="config_size_medium">Medium</string>
-    <string name="config_size_large">Large</string>
+    <string name="config_size_small">Small (0.85x)</string>
+    <string name="config_size_medium">Medium (1x)</string>
+    <string name="config_size_large">Large (1.35x)</string>
+    <string name="config_size_xl">XL (1.65x)</string>
+    <string name="config_size_giant">Giant (2x)</string>
     <string name="config_size_off">Hidden</string>
 </resources>
